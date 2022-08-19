@@ -70,33 +70,33 @@ namespace CRMSharp.Services
 
                 entity.Property(e => e.Id).HasColumnName("id");
 
-                entity.Property(e => e.Clientid).HasColumnName("clientid");
+                entity.Property(e => e.ClientId).HasColumnName("clientid");
 
                 entity.Property(e => e.Designation)
                     .HasMaxLength(100)
                     .HasColumnName("designation");
 
-                entity.Property(e => e.Nbdays).HasColumnName("nbdays");
+                entity.Property(e => e.NbDays).HasColumnName("nbdays");
 
                 entity.Property(e => e.State).HasColumnName("state");
 
-                entity.Property(e => e.Totalexcludetaxe)
+                entity.Property(e => e.TotalExcludeTaxe)
                     .HasColumnName("totalexcludetaxe")
                     .HasComputedColumnSql("((nbdays)::double precision * unitprice)", true);
 
-                entity.Property(e => e.Totalwithtaxe)
+                entity.Property(e => e.TotalWithTaxe)
                     .HasColumnName("totalwithtaxe")
                     .HasComputedColumnSql("(((nbdays)::double precision * unitprice) * (1.2)::double precision)", true);
 
-                entity.Property(e => e.Typepresta)
+                entity.Property(e => e.TypePresta)
                     .HasMaxLength(100)
                     .HasColumnName("typepresta");
 
-                entity.Property(e => e.Unitprice).HasColumnName("unitprice");
+                entity.Property(e => e.UnitPrice).HasColumnName("unitprice");
 
                 entity.HasOne(d => d.Client)
                     .WithMany(p => p.Orders)
-                    .HasForeignKey(d => d.Clientid)
+                    .HasForeignKey(d => d.ClientId)
                     .OnDelete(DeleteBehavior.SetNull)
                     .HasConstraintName("fk_clientid");
             });
