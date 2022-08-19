@@ -11,7 +11,7 @@ namespace CRMSharp.Models
         public string Designation { get; set; } = null!;
         public int Nbdays { get; set; }
         public double Unitprice { get; set; }
-        public int State { get; set; }
+        public OrderState State { get; set; }
         public double? Totalexcludetaxe { get; set; }
         public double? Totalwithtaxe { get; set; }
 

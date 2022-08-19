@@ -20,7 +20,7 @@ namespace CRMSharp.Models
         public string ZipCode { get; set; } = null!;
         public string City { get; set; } = null!;
         public string Country { get; set; } = null!;
-        public int? State { get; set; }
+        public ClientState? State { get; set; }
 
         public virtual ICollection<Order> Orders { get; set; }
     }
